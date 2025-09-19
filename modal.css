@@ -1,0 +1,115 @@
+/* modal.css: Універсальні стилі модального вікна */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(29, 27, 32, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #f2ecee;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  transform: translateY(8px) scale(.98);
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.modal-overlay.is-open .modal-content {
+  transform: none;
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 24px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+body.is-modal-open {
+  overflow: hidden;
+}
+
+.code-text {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    border: none;
+    padding: 12px;
+}
+
+/* --- Стилі для вмісту вікна попереднього перегляду --- */
+.modal-preview-content {
+    padding: 24px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.modal-preview-content table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+.modal-preview-content th,
+.modal-preview-content td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+.modal-preview-content th {
+    background-color: var(--main-5);
+}
+.modal-preview-content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* --- Адаптивність для мобільних пристроїв --- */
+@media (max-width: 1023px) {
+  .modal-overlay {
+    padding: 0;
+    /* Вирівнюємо по нижньому краю */
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 90vh;
+    max-height: 90vh;
+    border-radius: 0px;
+    transform: translateY(100%);
+  }
+
+  /* При відкритті виїжджає на свою позицію */
+  .modal-overlay.is-open .modal-content {
+    transform: translateY(0);
+  }
+}

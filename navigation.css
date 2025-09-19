@@ -1,0 +1,165 @@
+/* navigation.css: Стилі для лівого меню навігації */
+
+.sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width-expanded);
+    background-color: var(--back);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    transform: translateX(-100%);
+    background-color: #f2ecee;
+    /* Сховано за замовчуванням на моб. */
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.sidebar-nav.is-open {
+    transform: translateX(0);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+    color: var(--main-45);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-item:hover {
+    background-color: var(--splash-10);
+    color: var(--splash);
+}
+
+.nav-item:hover .nav-link-external-icon {
+    color: var(--splash);
+}
+
+.nav-link .material-symbols-outlined,
+span.material-symbols-outlined {
+    font-size: 16px;
+    flex-shrink: 0;
+    /* Забороняє іконці стискатись */
+}
+
+/* Кнопка "відкрити в новій вкладці", яка з'являється при наведенні */
+.open-new-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--main-45);
+    flex-shrink: 0;
+
+    /* Схована за замовчуванням */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed), visibility var(--transition-speed);
+}
+
+.open-new-tab:hover {
+    color: var(--splash);
+}
+
+/* Показати кнопку при наведенні на весь елемент списку */
+.nav-item:hover .open-new-tab {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Статична іконка для посилань, що завжди зовнішні */
+.nav-link-external-icon {
+    margin-left: auto;
+    color: var(--main-45);
+}
+
+@media (min-width: 1024px) {
+    .sidebar-nav {
+        transform: translateX(0);
+        width: var(--sidebar-width-collapsed);
+        transition: width var(--transition-speed) ease-in-out, background-color var(--transition-speed);
+    }
+
+    .sidebar-nav:hover {
+        width: var(--sidebar-width-expanded);
+        border-radius: 0px 8px 8px 0px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list {
+        margin-top: 16px;
+        /* Зменшуємо відступ, бо хедера немає */
+    }
+
+    /* Ховаємо текст і всі типи іконок "open_in_new", коли меню згорнуте */
+    .nav-link-text,
+    .open-new-tab,
+    .nav-link-external-icon {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-speed), visibility var(--transition-speed);
+    }
+
+    /* Показуємо текст і статичну іконку, коли меню розгортається */
+    .sidebar-nav:hover .nav-link-text,
+    .sidebar-nav:hover .nav-link-external-icon {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Кнопку, що з'являється, показуємо тільки при наведенні на сам елемент ВЖЕ в розгорнутому меню */
+    .sidebar-nav:hover .nav-item:hover .open-new-tab {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Розгорнутий стан по класу .is-expanded */
+    .sidebar-nav.is-expanded {
+        width: var(--sidebar-width-expanded);
+    }
+
+    /* Декоративні стилі для розгорнутого стану */
+    .sidebar-nav.is-expanded {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-nav.is-expanded {
+        border-radius: 0 12px 12px 0;
+    }
+
+    /* Показуємо текст у розгорнутому стані */
+    .sidebar-nav.is-expanded .nav-link-text,
+    .sidebar-nav.is-expanded .open-new-tab,
+    .sidebar-nav.is-expanded .nav-link-external-icon {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Анімація іконки для ЛІВОЇ панелі (без змін) */
+    .sidebar-nav.is-expanded #left-sidebar-toggle > span {
+        transform: rotate(180deg);
+    }
+}

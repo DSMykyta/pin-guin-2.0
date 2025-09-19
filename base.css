@@ -1,0 +1,135 @@
+/* base.css: Базові стилі для всього документа */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: var(--back);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--main);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--main-45);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+}
+
+.separator {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 8px;
+}
+
+.move-btn {
+    height: 32px;
+    border: none;
+    background-color: var(--tran);
+    color: var(--main-10);
+    cursor: grab;
+}
+
+.move-btn:hover {
+    color: var(--main);
+}
+
+.lil-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 99px;
+    background-color: var(--tran);
+    color: var(--main-45);
+    cursor: pointer;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.primary-btn {
+    flex-grow: 1;
+    background-color: var(--main);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+.secondary-btn {
+    background-color: var(--main-10);
+    color: var(--main);
+}
+
+.secondary-btn:hover {
+    background-color: var(--main-20);
+}
+
+.lil-btn:hover {
+    background-color: var(--splash-20);
+    color: var(--splash);
+}
+
+::selection {
+    color: var(--splash);
+    background-color: var(--splash-20);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--trans);
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-10);
+    border-radius: 99px;
+}
+
+::marker {
+    color: var(--main-45);
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Допоміжний сайт</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Відкрити меню">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <button id="aside-mobile-toggle-btn" class="menu-toggle-btn" aria-label="Відкрити студію">
+            <span class="material-symbols-outlined">auto_fix_high</span>
+        </button>
+
+    </header>
+
+    <nav id="sidebar-nav" class="sidebar-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#table" class="nav-link">
+                    <span class="material-symbols-outlined">table_rows</span>
+                    <span class="nav-link-text">Склад</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#text" class="nav-link">
+                    <span class="material-symbols-outlined">edit_note</span>
+                    <span class="nav-link-text">Текст</span>
+                </a>
+                <a href="p_text.html" class="open-new-tab" target="_blank" aria-label="Відкрити в новій вкладці">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#seo" class="nav-link">
+                    <span class="material-symbols-outlined">language</span>
+                    <span class="nav-link-text">SEO</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#trans" class="nav-link">
+                    <span class="material-symbols-outlined">translate</span>
+                    <span class="nav-link-text">Переклад</span>
+                </a>
+                <a href="https://semi-shop.com.ua/5tLKV0FnOo.php?all" class="open-new-tab" target="_blank"
+                    aria-label="Відкрити в новій вкладці">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#links" class="nav-link">
+                    <span class="material-symbols-outlined">task_alt</span>
+                    <span class="nav-link-text">Офіційні сайти</span>
+                </a>
+            </li>
+
+            <li class="separator"></li>
+
+            <li class="nav-item">
+                <a href="/shablon-hrafic/index.html" class="nav-link" target="_blank">
+                    <span class="material-symbols-outlined">print</span>
+                    <span class="nav-link-text">Графік</span>
+                    <span class="material-symbols-outlined nav-link-external-icon">open_in_new</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="p_glossary.html" class="nav-link" target="_blank">
+                    <span class="material-symbols-outlined">import_contacts</span>
+                    <span class="nav-link-text">Глосарій</span>
+                    <span class="material-symbols-outlined nav-link-external-icon">open_in_new</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://docs.google.com/spreadsheets/d/1JFICWpsPnZWOS1HcdUYEP-FLUFw1gf8aDEd47aFcEeo/edit"
+                    class="nav-link" target="_blank">
+                    <span class="material-symbols-outlined">account_tree</span>
+                    <span class="nav-link-text">База данних</span>
+                    <span class="material-symbols-outlined nav-link-external-icon">open_in_new</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://docs.google.com/spreadsheets/d/1kDpQ6FoSsEsA7dc36MKYA97j6lTmLZ_de11o83CZGXU/edit"
+                    class="nav-link" target="_blank">
+                    <span class="material-symbols-outlined">account_tree</span>
+                    <span class="nav-link-text">База брендів</span>
+                    <span class="material-symbols-outlined nav-link-external-icon">open_in_new</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="main-content">
+
+        <div id="table" class="block-1">
+            <div class="block-2">
+                <h1>Таблиці</h1>
+                <h2>Генерація складу і вмісту елементів на 1 порцію</h2>
+            </div>
+            <div class="block">
+                <div class="flex-5">
+                    <div>
+                        <div id="inputs-container" class="white-box">
+                            <div id="rows-container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside id="right-sidebar" class="right-sidebar">
+        <div id="panel-table-generator" class="panel-content is-active">
+            <div class="panel-header">
+                <button id="aside-desktop-toggle-btn" class="aside-item" aria-label="Згорнути панель">
+                    <span class="material-symbols-outlined">menu_open</span>
+                </button>
+            </div>
+
+            <div class="panel-footer">
+                <div class="results-container">
+
+                    <div id="result-card-html" class="result-card" title="Копіювати HTML таблицю">
+                        <span class="material-symbols-outlined">code</span>
+                        <div class="result-card-text">
+                            <span class="result-title">Склад</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display: none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="html">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="result-card-br" class="result-card" title="Копіювати текст з <br>">
+                        <span class="material-symbols-outlined">notes</span>
+                        <div class="result-card-text">
+                            <span class="result-title">1 порція</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display: none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="br">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="panel-body">
+                <div class="aside-list">
+                    <button id="add-input" class="aside-item">
+                        <span class="material-symbols-outlined">add</span>
+                        <span class="aside-link-text">Новий рядок</span>
+                    </button>
+                    <button id="add-ampty-line" class="aside-item">
+                        <span class="material-symbols-outlined">rectangle</span>
+                        <span class="aside-link-text">Розділювач</span>
+                    </button>
+                    <button id="ingredients" class="aside-item">
+                        <span class="material-symbols-outlined">source_notes</span>
+                        <span class="aside-link-text">Інгредієнти</span>
+                    </button>
+                    <button id="warning-text" class="aside-item">
+                        <span class="material-symbols-outlined">warning</span>
+                        <span class="aside-link-text">Попередження</span>
+                    </button>
+                    <button id="different_product_composition" class="aside-item">
+                        <span class="material-symbols-outlined">call_split</span>
+                        <span class="aside-link-text">Різний склад</span>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="aside-list">
+                    <button id="add-nutrition-facts-sample" class="aside-item">
+                        <span class="material-symbols-outlined">nutrition</span>
+                        <span class="aside-link-text">Nutrition Facts</span>
+                    </button>
+                    <button id="add-vitamins-sample" class="aside-item">
+                        <span class="material-symbols-outlined">spo2</span>
+                        <span class="aside-link-text">Вітаміни</span>
+                    </button>
+                    <button id="add-amino-acids-sample" class="aside-item">
+                        <span class="material-symbols-outlined">pill</span>
+                        <span class="aside-link-text">Амінокислоти</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="panel-footer">
+                <div class="aside-list">
+                    <button id="magic-modal-trigger" class="primary-btn" data-modal-trigger="magic-modal"
+                        style="margin-bottom: 4px;">
+                        <span class="material-symbols-outlined">auto_fix_high</span>
+                        <span class="aside-link-text">Магія</span>
+                    </button>
+                    <!--<button id="tables-btn" class="primary-btn">
+                        <span class="material-symbols-outlined">done</span>
+                        <span class="aside-link-text">Створити</span>
+                    </button> -->
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <div id="magic-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"></h2>
+                <button class="lil-btn" data-modal-close>
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <textarea id="magic-text" class="code-text" placeholder="Вставте скопійований текст сюди..."></textarea>
+            <button id="magic-button" class="primary-btn">Застосувати магію</button>
+        </div>
+    </div>
+
+    <div id="preview-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="preview-modal-title" class="modal-title">Попередній перегляд</h2>
+                <button class="lil-btn" data-modal-close>
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div id="preview-content" class="modal-preview-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

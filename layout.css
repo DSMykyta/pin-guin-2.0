@@ -1,0 +1,76 @@
+/* layout.css: Стилі для основної розмітки сторінки (хедер, контент) */
+
+/* --- Хедер --- */
+/* --- Хедер --- */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Розміщує кнопки по краях */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 8px; /* Симетричні відступи */
+    z-index: 100;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: 500;
+    /* Абсолютне центрування, щоб не заважати кнопкам */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.menu-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--main-65);
+}
+
+.menu-toggle-btn:hover {
+    background-color: var(--main-10);
+    color: var(--main);
+}
+
+/* --- Основний контент --- */
+.main-content {
+    padding-top: var(--header-height);
+    padding-left: 16px;
+    padding-right: 16px;
+    /* Додаємо відступ, щоб права панель не перекривала контент */
+    margin-right: var(--sidebar-width-collapsed); 
+    transition: margin-left var(--transition-speed) ease-in-out;
+}
+
+/* --- Десктопна розмітка --- */
+@media (min-width: 1024px) {
+    body {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 24px;
+        margin-left: var(--sidebar-width-collapsed);
+        margin-right: 0; 
+    }
+
+    .page-header {
+        display: none;
+    }
+}
