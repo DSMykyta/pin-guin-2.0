@@ -53,6 +53,7 @@
 .panel-footer {
     padding: 8px;
     overflow-y: auto;
+    min-height: fit-content;
     /*flex-grow: 1;*/
 }
 
@@ -183,7 +184,8 @@
     .right-sidebar.is-open .aside-link-text,
     .right-sidebar.is-open .result-card-text,
     .right-sidebar.is-open .nav-link-external-icon,
-    .right-sidebar.is-open .lil-btn {
+    .right-sidebar.is-open .lil-btn,
+    .right-sidebar.is-open .result-card-actions {
         display: block;
     }
 }

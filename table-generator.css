@@ -51,6 +51,7 @@
 
 .inputs-line {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
@@ -72,7 +73,7 @@
 
 .right {
     flex: 1;
-    border-left: 1px solid var(--main-10);
+    border-top: 1px solid var(--main-5);
 }
 
 /* --- Інструменти рядка --- */
@@ -364,7 +365,7 @@
 
 .added .input-left,
 .added .input-right {
-    color: var(--splash);
+    color: var(--accent);
 }
 
 .h2 .input-left {
@@ -418,5 +419,16 @@
         opacity: 0;
         visibility: hidden;
         transition: opacity var(--transition-speed);
+    }
+
+    .inputs-line {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .right {
+        border-left: 1px solid var(--main-10);
+        border-top: none;
     }
 }
