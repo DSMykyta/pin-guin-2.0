@@ -1,0 +1,143 @@
+/* seo-generator.css: Стилі для блоку генерації SEO */
+
+/* --- Основний контент --- */
+.seo-line-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    transition: background-color 0.2s;
+}
+
+.white-box .seo-line-container:hover {
+    background-color: var(--main-5);
+}
+
+.seo-line-container.result-line {
+    cursor: copy;
+}
+
+.seo-line-container .context-span {
+    color: var(--main-65);
+    user-select: none;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.text-line {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--main);
+    font-size: 14px;
+}
+
+.country-display {
+    position: absolute;
+    right: 12px;
+    color: var(--main-65);
+    font-size: 14px;
+    user-select: none;
+}
+
+.counter {
+    font-size: 12px;
+    color: var(--main-45);
+    background-color: var(--main-5);
+    padding: 2px 8px;
+    border-radius: 16px;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.tooltip-box {
+    padding-top: 12px;
+}
+
+#trigger-titles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.trigger-button,
+.trigger-title-inactive,
+.trigger-title-active {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    font-weight: 500;
+    font-size: 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--back-secondary);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.trigger-button,
+.trigger-title-inactive {
+    color: var(--main-65);
+}
+
+.trigger-button:hover,
+.trigger-title-inactive:hover {
+    color: var(--main);
+    background-color: var(--main-5);
+    border-color: var(--main-20);
+}
+
+.trigger-title-active {
+    color: var(--white);
+    border-color: var(--splash);
+    background-color: var(--splash);
+}
+
+.trigger-title-active:hover {
+    opacity: 0.9;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: max-content;
+    max-width: 250px;
+    background-color: var(--main);
+    border: none;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 100;
+    color: var(--white);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.trigger-title-active:hover .tooltip,
+.trigger-title-inactive:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#common-warning {
+    color: var(--splash);
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
+    text-align: center;
+}
+
+#panel-seo .flex-wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+}

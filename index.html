@@ -139,14 +139,50 @@
         <div id="seo" class="block-1 content-section" data-panel-target="panel-seo">
             <div class="block-2">
                 <h1>SEO</h1>
-                <h2>Інструменти для оптимізації</h2>
+                <h2>Генерація Meta Title, Keywords і Description</h2>
             </div>
             <div class="block">
                 <div class="flex-5">
-                    <p>Тут буде контент для SEO.</p>
+                    <div class="white-box" style="margin-bottom: 12px;">
+                        <div class="seo-line-container">
+                            <input id="brand-name" class="text-line" placeholder="Назва бренду:" autocomplete="off">
+                            <div id="country-name" class="country-display"></div>
+                        </div>
+                        <div class="seo-line-container">
+                            <input id="product-name" class="text-line" placeholder="Назва товару:" autocomplete="off">
+                        </div>
+                        <div class="seo-line-container">
+                            <input id="product-packaging" class="text-line"
+                                placeholder="Фасування товару (напр. 90 капс):" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="white-box">
+                        <div class="seo-line-container result-line" title="Клікнути, щоб скопіювати">
+                            <span class="context-span">Title:</span>
+                            <input class="text-line" id="seo-title" readonly>
+                            <span class="counter" id="seo-title-counter">0/65</span>
+                        </div>
+                        <div class="seo-line-container result-line" title="Клікнути, щоб скопіювати">
+                            <span class="context-span">Keywords:</span>
+                            <input class="text-line" id="seo-keywords" readonly>
+                            <span class="counter" id="seo-keywords-counter">0/250</span>
+                        </div>
+                        <div class="seo-line-container result-line" title="Клікнути, щоб скопіювати">
+                            <span class="context-span">Description:</span>
+                            <input class="text-line" id="seo-description" readonly>
+                            <span class="counter" id="seo-description-counter">0/200</span>
+                        </div>
+                    </div>
+
+                    <div class="tooltip-box">
+                        <div id="trigger-titles-container"></div>
+                        <div id="common-warning"></div>
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <div id="trans" class="block-1 content-section" data-panel-target="panel-trans">
             <div class="block-2">
@@ -154,8 +190,29 @@
                 <h2>Інструменти для оптимізації</h2>
             </div>
             <div class="block">
-                <div class="flex-5">
-                    <p>Тут буде контент для перекладів.</p>
+                <div class="white-box">
+                    <iframe
+                        style="border: none; height: 560px; background-color: transparent; width: -webkit-fill-available; border-radius: 12px;"
+                        src="https://semi-shop.com.ua/5tLKV0FnOo.php?all"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="links" class="block-1 content-section" data-panel-target="panel-links">
+            <div class="block-2">
+                <h1>Офіційні сайти</h1>
+                <h2>Список посилань на сайти виробників</h2>
+            </div>
+            <div class="block">
+                <div class="white-box links-white-box">
+                    <div class="seo-line-container search-container"
+                        style="margin-bottom: 12px; border: 1px solid var(--border-color);">
+                        <span class="material-symbols-outlined">search</span>
+                        <input id="search-link" class="text-line" placeholder="Пошук виробника..." autocomplete="off">
+                        <div id="links-country-name" class="country-display"></div>
+                    </div>
+
+                    <div id="buttons-container" class="links-container"></div>
                 </div>
             </div>
         </div>
@@ -260,9 +317,10 @@
 
             <div class="separator"></div>
 
-            <div class="panel-footer" style="padding-bottom: 64px;">
+            <div class="panel-footer" style="padding-bottom: 32px;">
                 <div class="aside-list">
-                    <button id="magic-modal-trigger" class="primary-btn" data-modal-trigger="magic-modal">
+                    <button id="magic-modal-trigger" class="primary-btn" data-modal-trigger="magic-modal"
+                        style="margin-bottom: 4px;">
                         <span class="material-symbols-outlined">auto_fix_high</span>
                         <span class="aside-link-text">Магія</span>
                     </button>
@@ -328,10 +386,10 @@
                     <div id="result-card-text-br" class="aside-item" title="Копіювати текст з &lt;br&gt;">
                         <span class="material-symbols-outlined">notes</span>
                         <div class="result-card-text">
-                            <span class="aside-link-text">br/ізація</span>
+                            <span class="result-title">br/ізація</span>
                             <span class="result-status"></span>
                         </div>
-                        <!--<div class="result-card-actions">
+                        <div class="result-card-actions">
                             <button class="icon-btn lil-btn"><span
                                     class="material-symbols-outlined">more_vert</span></button>
                             <div class="attributes-dropdown" style="display:none;">
@@ -340,17 +398,17 @@
                                     <span>Показати візуалізацію</span>
                                 </button>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
 
                     <div id="result-card-text-clean-tags" class="aside-item"
                         title="Копіювати: без стилів, теги збережено">
                         <span class="material-symbols-outlined">format_clear</span>
                         <div class="result-card-text">
-                            <span class="aside-link-text">Без стилів (теги)</span>
+                            <span class="result-title">Без стилів (теги)</span>
                             <span class="result-status"></span>
                         </div>
-                        <!-- <div class="result-card-actions">
+                        <div class="result-card-actions">
                             <button class="icon-btn lil-btn"><span
                                     class="material-symbols-outlined">more_vert</span></button>
                             <div class="attributes-dropdown" style="display:none;">
@@ -359,16 +417,16 @@
                                     <span>Показати візуалізацію</span>
                                 </button>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
 
                     <div id="result-card-text-clean" class="aside-item" title="Копіювати: повністю без коду">
                         <span class="material-symbols-outlined">clear_all</span>
                         <div class="result-card-text">
-                            <span class="aside-link-text">Повністю без коду</span>
+                            <span class="result-title">Повністю без коду</span>
                             <span class="result-status"></span>
                         </div>
-                        <!--<div class="result-card-actions">
+                        <div class="result-card-actions">
                             <button class="icon-btn lil-btn"><span
                                     class="material-symbols-outlined">more_vert</span></button>
                             <div class="attributes-dropdown" style="display:none;">
@@ -377,24 +435,26 @@
                                     <span>Показати візуалізацію</span>
                                 </button>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="separator"></div>
 
-            <div class="panel-footer" style="padding-bottom: 64px;">
+            <div class="panel-footer" style="padding-bottom: 32px;">
                 <div class="aside-list">
                     <a href="https://gemini.google.com/gem/1G8XKY4TEhLYZCOraRdx1vf3hPQbjZ5PY?usp=sharing"
-                        target="_blank" class="primary-btn">
+                        target="_blank" class="primary-btn"
+                        style="margin-bottom: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
                         <span class="material-symbols-outlined">auto_fix_high</span>
                         <span class="aside-link-text">Текст від Gemini</span>
                     </a>
 
 
                     <a href="https://chatgpt.com/g/g-wTxhkdE8O-opis-tekstu?model=gpt-4o" target="_blank"
-                        class="primary-btn">
+                        class="primary-btn"
+                        style="margin-bottom: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
                         <span class="material-symbols-outlined">auto_fix_high</span>
                         <span class="aside-link-text">Текст від GPT</span>
                     </a>
@@ -403,18 +463,47 @@
         </div>
 
         <div id="panel-seo" class="panel-content">
+            <div class="panel-footer">
+                <div class="seo-line-container search-container result-card" style="margin-bottom: 8px;">
+                    <span class="material-symbols-outlined">search</span>
+                    <input id="search-triger" class="text-line" placeholder="Пошук тригера..." autocomplete="off">
+                </div>
+            </div>
+
+            <div class="separator"></div>
 
             <div class="panel-body">
-                <p>Тут будуть інструменти для SEO.</p>
+                <div class="flex-wrap-container" id="triger-buttons-container" style="height: 20px;">
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="panel-footer" style="padding-bottom: 32px;">
+                <div class="aside-list">
+                    <a href="https://docs.google.com/spreadsheets/d/1JFICWpsPnZWOS1HcdUYEP-FLUFw1gf8aDEd47aFcEeo/edit"
+                        target="_blank" class="primary-btn"
+                        style="margin-bottom: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        <span class="aside-link-text">Створити тригер</span>
+                    </a>
+                </div>
             </div>
         </div>
 
         <div id="panel-trans" class="panel-content">
-
             <div class="panel-body">
-                <p>Тут будуть інструменти для перекладів.</p>
+                <p class="aside-link-text">Тут будуть інструменти для перекладів.</p>
             </div>
         </div>
+
+
+        <div id="panel-links" class="panel-content">
+            <div class="panel-body">
+                <p class="aside-link-text">Тут будуть інструменти для посилань.</p>
+            </div>
+        </div>
+
     </aside>
 
     <div id="magic-modal" class="modal-overlay">
@@ -444,6 +533,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script type="module" src="main.js"></script>
 </body>
 

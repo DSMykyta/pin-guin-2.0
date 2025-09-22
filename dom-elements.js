@@ -59,3 +59,21 @@ export const resultCardAutoformat = document.getElementById('result-card-autofor
 export const resultCardCleanStyles = document.getElementById('result-card-clean-styles');
 export const resultCardCleanTags = document.getElementById('result-card-clean-tags');
 export const resultCardBrization = document.getElementById('result-card-brization');
+
+
+// --- SEO Generator ---
+export const seoGenerator = document.getElementById('seo-generator');
+export const brandNameInput = document.getElementById('brand-name');
+export const countryNameDiv = document.getElementById('country-name');
+export const productNameInput = document.getElementById('product-name');
+export const productPackagingInput = document.getElementById('product-packaging');
+export const seoTitleInput = document.getElementById('seo-title');
+export const seoTitleCounterSpan = document.getElementById('seo-title-counter');
+export const seoKeywordsInput = document.getElementById('seo-keywords');
+export const seoKeywordsCounterSpan = document.getElementById('seo-keywords-counter');
+export const seoDescriptionInput = document.getElementById('seo-description');
+export const seoDescriptionCounterSpan = document.getElementById('seo-description-counter');
+export const triggerTitlesContainer = document.getElementById('trigger-titles-container');
+export const trigerButtonsContainer = document.getElementById('triger-buttons-container');
+export const searchTrigerInput = document.getElementById('search-triger');
+export const commonWarning = document.getElementById('common-warning');

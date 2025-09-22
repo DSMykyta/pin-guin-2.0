@@ -428,11 +428,13 @@
         /* Додано */
         padding-top: 0;
     }
+
     .main-content .block-1 {
         /* Додано */
         min-height: 100vh;
         padding-top: 24px;
     }
+
     .inputs-line {
         display: flex;
         flex-direction: row;
@@ -442,5 +444,9 @@
     .right {
         border-left: 1px solid var(--main-10);
         border-top: none;
+    }
+
+    .block {
+        margin-bottom: 240px;
     }
 }

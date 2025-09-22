@@ -1,15 +1,21 @@
+// main.js
+
 import { initSidebars } from './sidebar.js';
 import { initTableGenerator } from './table-generator.js';
 import { initTextGenerator } from './text-generator.js';
+import { initSeoGenerator } from './seo-generator.js';
 import { initializeModal } from './modal.js';
 import { initStickyPanelObserver } from './sticky-panel.js';
-import { initPreviewFeature } from './preview.js'; // <-- Додайте імпорт
+import { initPreviewFeature } from './preview.js';
+import { initLinksGenerator } from './links-generator.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initSidebars();
     initializeModal();
     initTableGenerator();
     initTextGenerator();
+    initSeoGenerator();
     initPreviewFeature();
     initStickyPanelObserver();
+    initLinksGenerator();
 });

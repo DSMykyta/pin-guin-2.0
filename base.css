@@ -79,7 +79,7 @@ textarea:focus-visible {
 .secondary-btn {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     gap: 16px;
     min-height: 48px;
     min-width: 48px;

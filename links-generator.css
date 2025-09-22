@@ -1,0 +1,55 @@
+/* links-generator.css: Оновлені стилі для блоку "Офіційні сайти" */
+
+.links-white-box {
+    display: flex;
+    flex-direction: column;
+    height: 70vh; 
+}
+
+.links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+#links .flex-5 {
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
+.link-button {
+    display: inline-flex;
+    padding: 0; /* Забираємо внутрішній відступ у кнопки */
+    background-color: var(--main-5);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.link-button a {
+    display: flex; /* Робимо посилання гнучким контейнером */
+    align-items: center;
+    gap: 8px; /* Відстань між текстом та іконкою */
+    padding: 6px 12px; /* Переносимо відступ сюди */
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--main-65);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.link-button-text {
+    /* Цьому елементу додаткові стилі не потрібні */
+}
+
+.link-button:hover {
+    background-color: var(--splash-20);
+}
+
+.link-button:hover a {
+    color: var(--splash);
+}

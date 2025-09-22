@@ -198,7 +198,9 @@
     .right-sidebar .result-card-text,
     .right-sidebar .nav-link-external-icon,
     .right-sidebar .lil-btn,
-    .right-sidebar .result-card-actions {
+    .right-sidebar .result-card-actions,
+    .right-sidebar #search-triger,
+    .right-sidebar .panel-body #triger-buttons-container {
         display: none;
     }
 
@@ -207,8 +209,13 @@
     .right-sidebar.is-open .result-card-text,
     .right-sidebar.is-open .nav-link-external-icon,
     .right-sidebar.is-open .lil-btn,
-    .right-sidebar.is-open .result-card-actions {
+    .right-sidebar.is-open .result-card-actions,
+    .right-sidebar.is-open #search-triger {
         display: block;
+    }
+
+    .right-sidebar.is-open .panel-body #triger-buttons-container {
+        display: flex;
     }
 }
 
@@ -218,7 +225,7 @@
     .right-sidebar {
         position: relative;
         transform: none;
-        width: var(--right-sidebar-width);
+        min-width: var(--right-sidebar-width);
         order: 3;
         box-shadow: none;
         border-radius: 12px 0 0 12px;
@@ -226,16 +233,11 @@
 
     /* Стилі для ЗГОРНУТОГО стану по класу .is-collapsed */
     .right-sidebar.is-collapsed {
-        width: var(--sidebar-width-collapsed);
+        min-width: var(--sidebar-width-collapsed);
     }
 
     .right-sidebar.is-collapsed.aside-secondary {
         visibility: hidden;
-    }
-
-    /* Ховаємо другорядні кнопки у згорнутому стані */
-    .right-sidebar .aside-secondary {
-        transition: opacity var(--transition-speed);
     }
 
     .right-sidebar.is-collapsed {
@@ -246,7 +248,9 @@
     .right-sidebar.is-collapsed .result-card-text,
     .right-sidebar.is-collapsed .nav-link-external-icon,
     .right-sidebar.is-collapsed .lil-btn,
-    .right-sidebar.is-collapsed .result-card-actions {
+    .right-sidebar.is-collapsed .result-card-actions,
+    .right-sidebar.is-collapsed #search-triger,
+    .right-sidebar.is-collapsed #triger-buttons-container {
         display: none;
     }
 
