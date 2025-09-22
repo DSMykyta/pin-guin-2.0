@@ -240,7 +240,7 @@ function handleInputTypeSwitch(row, type) {
     });
 }
 
-function generateHtmlTable() {
+export function generateHtmlTable() {
     let tableHTML = '';
     let isTableOpen = false;
     dom.rowsContainer.querySelectorAll('.inputs-bloc').forEach(row => {
@@ -290,7 +290,7 @@ function generateHtmlTable() {
     return tableHTML;
 }
 
-function generateBrText() {
+export function generateBrText() {
     let textHTML = '';
     dom.rowsContainer.querySelectorAll('.inputs-bloc').forEach(row => {
         if (row.classList.contains('new-table')) { textHTML += '<br>'; return; }

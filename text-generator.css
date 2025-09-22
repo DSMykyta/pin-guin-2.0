@@ -1,0 +1,12 @@
+/* text-generator.css */
+#input-text-markup {
+    width: 100%;
+    min-height: 240px;
+    resize: vertical;
+}
+
+.result-card.copied .result-status::after {
+    content: '';
+}
+
+/* щоб не стрибав текст */

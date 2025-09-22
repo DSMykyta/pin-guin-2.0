@@ -103,7 +103,7 @@
 
     <main id="main-content" class="main-content">
 
-        <div id="table" class="block-1">
+        <div id="table" class="block-1 content-section" data-panel-target="panel-table-generator">
             <div class="block-2">
                 <h1>Таблиці</h1>
                 <h2>Генерація складу і вмісту елементів на 1 порцію</h2>
@@ -119,16 +119,57 @@
                 </div>
             </div>
         </div>
+
+        <div id="text" class="block-1 content-section" data-panel-target="panel-text">
+            <div class="block-2">
+                <h1>Текст</h1>
+                <h2>Інструменти для роботи з текстом</h2>
+            </div>
+            <div class="block">
+                <div class="flex-5">
+                    <div class="text-box white-box">
+                        <textarea id="input-text-markup" class="text"
+                            placeholder="Встав тут текст або HTML…"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="seo" class="block-1 content-section" data-panel-target="panel-seo">
+            <div class="block-2">
+                <h1>SEO</h1>
+                <h2>Інструменти для оптимізації</h2>
+            </div>
+            <div class="block">
+                <div class="flex-5">
+                    <p>Тут буде контент для SEO.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="trans" class="block-1 content-section" data-panel-target="panel-trans">
+            <div class="block-2">
+                <h1>Переклад</h1>
+                <h2>Інструменти для оптимізації</h2>
+            </div>
+            <div class="block">
+                <div class="flex-5">
+                    <p>Тут буде контент для перекладів.</p>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <aside id="right-sidebar" class="right-sidebar">
-        <div id="panel-table-generator" class="panel-content is-active">
-            <div class="panel-header">
-                <button id="aside-desktop-toggle-btn" class="aside-item" aria-label="Згорнути панель">
-                    <span class="material-symbols-outlined">menu_open</span>
-                </button>
-            </div>
+        <div class="panel-header">
+            <button id="aside-desktop-toggle-btn" class="aside-item" aria-label="Згорнути панель">
+                <span class="material-symbols-outlined">menu_open</span>
+            </button>
+        </div>
 
+        <div id="panel-table-generator" class="panel-content is-active">
             <div class="panel-footer">
                 <div class="results-container">
 
@@ -186,6 +227,9 @@
                         <span class="material-symbols-outlined">source_notes</span>
                         <span class="aside-link-text">Інгредієнти</span>
                     </button>
+
+                    <div class="separator"></div>
+
                     <button id="warning-text" class="aside-item">
                         <span class="material-symbols-outlined">warning</span>
                         <span class="aside-link-text">Попередження</span>
@@ -216,22 +260,164 @@
 
             <div class="separator"></div>
 
-            <div class="panel-footer" style="padding-bottom: 64px;">
+            <div class="panel-footer" style="padding-bottom: 32px;">
                 <div class="aside-list">
                     <button id="magic-modal-trigger" class="primary-btn" data-modal-trigger="magic-modal"
                         style="margin-bottom: 4px;">
                         <span class="material-symbols-outlined">auto_fix_high</span>
                         <span class="aside-link-text">Магія</span>
                     </button>
-                    <!--<button id="tables-btn" class="primary-btn">
-                        <span class="material-symbols-outlined">done</span>
-                        <span class="aside-link-text">Створити</span>
-                    </button> -->
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-text" class="panel-content is-active">
+            <div class="panel-footer">
+                <div class="results-container">
+
+                    <div id="result-card-text-html" class="result-card" title="Копіювати авто-розмітку (HTML)">
+                        <span class="material-symbols-outlined">code</span>
+                        <div class="result-card-text">
+                            <span class="result-title">Розмітка</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display:none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="text-html">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
+            <div class="separator"></div>
+
+            <div class="panel-body">
+                <div id="text-btns" class="aside-list">
+                    <button class="aside-item" id="boldBtn">
+                        <span class="material-symbols-outlined">format_bold</span>
+                        <span class="aside-link-text">Жирний текст</span>
+                    </button>
+
+                    <button class="aside-item" id="lowercaseBtn">
+                        <span class="material-symbols-outlined">text_rotate_vertical</span>
+                        <span class="aside-link-text">Всі маленькі</span>
+                    </button>
+                    <button class="aside-item" id="h1Btn">
+                        <span class="material-symbols-outlined">format_h1</span>
+                        <span class="aside-link-text">Заголовок 1</span>
+                    </button>
+                    <button class="aside-item" id="h2Btn">
+                        <span class="material-symbols-outlined">format_h2</span>
+                        <span class="aside-link-text">Заголовок 2</span>
+                    </button>
+                    <button class="aside-item" id="h3Btn">
+                        <span class="material-symbols-outlined">format_h3</span>
+                        <span class="aside-link-text">Заголовок 3</span>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="aside-list">
+                    <div id="result-card-text-br" class="aside-item" title="Копіювати текст з &lt;br&gt;">
+                        <span class="material-symbols-outlined">notes</span>
+                        <div class="result-card-text">
+                            <span class="result-title">br/ізація</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display:none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="text-br">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result-card-text-clean-tags" class="aside-item"
+                        title="Копіювати: без стилів, теги збережено">
+                        <span class="material-symbols-outlined">format_clear</span>
+                        <div class="result-card-text">
+                            <span class="result-title">Без стилів (теги)</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display:none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="text-clean-tags">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result-card-text-clean" class="aside-item" title="Копіювати: повністю без коду">
+                        <span class="material-symbols-outlined">clear_all</span>
+                        <div class="result-card-text">
+                            <span class="result-title">Повністю без коду</span>
+                            <span class="result-status"></span>
+                        </div>
+                        <div class="result-card-actions">
+                            <button class="icon-btn lil-btn"><span
+                                    class="material-symbols-outlined">more_vert</span></button>
+                            <div class="attributes-dropdown" style="display:none;">
+                                <button class="option-btn option-btn-l" data-modal-trigger="preview-modal"
+                                    data-preview-target="text-clean">
+                                    <span>Показати візуалізацію</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="panel-footer" style="padding-bottom: 32px;">
+                <div class="aside-list">
+                    <a href="https://gemini.google.com/gem/1G8XKY4TEhLYZCOraRdx1vf3hPQbjZ5PY?usp=sharing"
+                        target="_blank" class="primary-btn"
+                        style="margin-bottom: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined">auto_fix_high</span>
+                        <span class="aside-link-text">Текст від Gemini</span>
+                    </a>
+
+
+                    <a href="https://chatgpt.com/g/g-wTxhkdE8O-opis-tekstu?model=gpt-4o" target="_blank"
+                        class="primary-btn"
+                        style="margin-bottom: 4px; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined">auto_fix_high</span>
+                        <span class="aside-link-text">Текст від GPT</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
+        <div id="panel-seo" class="panel-content">
+
+            <div class="panel-body">
+                <p>Тут будуть інструменти для SEO.</p>
+            </div>
+        </div>
+
+        <div id="panel-trans" class="panel-content">
+
+            <div class="panel-body">
+                <p>Тут будуть інструменти для перекладів.</p>
+            </div>
+        </div>
     </aside>
 
     <div id="magic-modal" class="modal-overlay">
@@ -261,10 +447,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-
     <script type="module" src="main.js"></script>
 </body>
 
-
 </html>
-

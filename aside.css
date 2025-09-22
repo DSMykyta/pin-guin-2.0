@@ -29,10 +29,12 @@
 
 /* --- Внутрішня структура панелі (без змін) --- */
 .panel-content {
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 100%;
 }
+.panel-content.is-active { display: flex; }
+
 
 .panel-header {
     display: flex;
@@ -41,8 +43,17 @@
     padding: 0 8px;
     height: var(--header-height);
     flex-shrink: 0;
-
 }
+
+/* глобальний хедер у правій панелі */
+.panel-header-global {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: inherit;           /* щоб колір збігався з панеллю */
+  border-bottom: 1px solid var(--main-10);
+}
+
 
 .panel-body {
     padding: 8px;
@@ -52,7 +63,6 @@
 
 .panel-footer {
     padding: 8px;
-    overflow-y: auto;
     min-height: fit-content;
     /*flex-grow: 1;*/
 }
@@ -161,12 +171,24 @@
 
 /* --- Стилі для випадаючого меню в картках результату --- */
 .result-card-actions {
-    position: relative;
+    position: relative; /* Встановлюємо контекст позиціонування */
     margin-left: auto;
 }
 .result-card-actions .attributes-dropdown {
+    /* --- ОСНОВНІ ЗМІНИ ТУТ --- */
+    position: absolute; /* Дозволяє меню вийти за межі батьківського блоку */
+    z-index: 10;      /* Переконуємось, що меню буде поверх інших елементів */
     right: 0;
     top: 100%;
+    margin-top: 4px;
+    min-width: 200px; /* Задаємо мінімальну ширину, щоб текст не переносився */
+    
+    /* Додаємо стилі, щоб меню виглядало як панель */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 1023px) {
@@ -229,3 +251,4 @@
     }
 
 }
+

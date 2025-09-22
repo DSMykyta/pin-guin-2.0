@@ -1,24 +1,22 @@
 /* layout.css: Стилі для основної розмітки сторінки (хедер, контент) */
 
 /* --- Хедер --- */
-/* --- Хедер --- */
 .page-header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Розміщує кнопки по краях */
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
-    padding: 0 8px; /* Симетричні відступи */
+    padding: 0 8px;
     z-index: 100;
 }
 
 .header-title {
     font-size: 18px;
     font-weight: 500;
-    /* Абсолютне центрування, щоб не заважати кнопкам */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -44,13 +42,25 @@
 }
 
 /* --- Основний контент --- */
+/* Ці зміни забезпечують повноекранний скролінг та "прилипання" блоків */
 .main-content {
-    padding-top: var(--header-height);
     padding-left: 16px;
     padding-right: 16px;
-    /* Додаємо відступ, щоб права панель не перекривала контент */
     margin-right: var(--sidebar-width-collapsed); 
     transition: margin-left var(--transition-speed) ease-in-out;
+    scroll-snap-type: y mandatory; /* Визначає, що прокрутка має "прилипати" */
+    height: 100vh; /* Робить основний контейнер висотою всього вікна */
+    overflow-y: auto; /* Дозволяє прокручувати його вміст */
+}
+
+/* Кожен блок-1 займає всю висоту вікна і "прилипає" до верхнього краю */
+.main-content .block-1 {
+    min-height: calc(100vh - var(--header-height));
+    padding-top: var(--header-height);
+    scroll-snap-align: start; /* Змушує блок "прилипнути" до верху контейнера */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- Десктопна розмітка --- */
@@ -65,9 +75,14 @@
         flex-grow: 1;
         height: 100vh;
         overflow-y: auto;
-        padding-top: 24px;
+        padding-top: 0; 
         margin-left: var(--sidebar-width-collapsed);
         margin-right: 0; 
+    }
+    
+    .main-content .block-1 {
+        min-height: 100vh;
+        padding-top: 24px;
     }
 
     .page-header {

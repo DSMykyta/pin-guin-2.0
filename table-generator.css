@@ -405,22 +405,34 @@
     border-radius: 8px;
 }
 
+/* --- НОВІ СТИЛІ ДЛЯ "ПОВНОЕКРАННИХ" СЕКЦІЙ --- */
+.main-content {
+    /* Додано */
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.main-content .block-1 {
+    /* Додано */
+    min-height: calc(100vh - var(--header-height));
+    padding-top: var(--header-height);
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 1024px) {
-
-    .mode-toggle-content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    .main-content {
+        /* Додано */
+        padding-top: 0;
     }
-
-    /* Ховаємо текст у згорнутому стані */
-    .panel-action-text,
-    .panel-title {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity var(--transition-speed);
+    .main-content .block-1 {
+        /* Додано */
+        min-height: 100vh;
+        padding-top: 24px;
     }
-
     .inputs-line {
         display: flex;
         flex-direction: row;

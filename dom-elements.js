@@ -42,3 +42,20 @@ export const magicButton = document.getElementById('magic-button');
 export const previewModal = document.getElementById('preview-modal');
 export const previewModalTitle = document.getElementById('preview-modal-title');
 export const previewContent = document.getElementById('preview-content');
+
+// --- Text Generator ---
+export const textInputArea = document.getElementById('text-input-area');
+
+// Toolbar buttons
+export const formatBoldBtn = document.getElementById('format-bold');
+export const formatH1Btn = document.getElementById('format-h1');
+export const formatH2Btn = document.getElementById('format-h2');
+export const formatH3Btn = document.getElementById('format-h3');
+export const formatLowercaseBtn = document.getElementById('format-lowercase');
+export const clearTextBtn = document.getElementById('clear-text-btn');
+
+// Result cards
+export const resultCardAutoformat = document.getElementById('result-card-autoformat');
+export const resultCardCleanStyles = document.getElementById('result-card-clean-styles');
+export const resultCardCleanTags = document.getElementById('result-card-clean-tags');
+export const resultCardBrization = document.getElementById('result-card-brization');

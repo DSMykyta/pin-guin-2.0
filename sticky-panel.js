@@ -12,6 +12,7 @@ export function initStickyPanelObserver() {
                 if (targetPanel) targetPanel.classList.add('is-active');
             }
         });
-    }, { root: null, threshold: 0.4 });
+    }, { root: document.getElementById('main-content'), threshold: 0.4 });
     sections.forEach(section => observer.observe(section));
 }
+
