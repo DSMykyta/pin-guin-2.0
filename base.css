@@ -100,6 +100,16 @@ textarea:focus-visible {
     opacity: 0.9;
 }
 
+
+a .primary-btn,
+a .secondary-btn {
+    margin-bottom: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .secondary-btn {
     background-color: var(--main-10);
     color: var(--main);
