@@ -46,10 +46,17 @@
     /* Цьому елементу додаткові стилі не потрібні */
 }
 
+.link-button-text:hover {
+    
+}
+
 .link-button:hover {
     background-color: var(--splash-20);
+    font-style: italic;  
 }
 
 .link-button:hover a {
     color: var(--splash);
 }
+
+

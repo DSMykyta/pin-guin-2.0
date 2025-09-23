@@ -3,7 +3,8 @@
     --splash: rgb(103, 80, 164);
     --splash-10: rgba(103, 80, 164, 0.1);
     --splash-20: rgba(103, 80, 164, 0.2);
-    --accent: #6200ee;
+    --splash-20-f: rgb(225, 220, 237);
+    --accent: rgb(98, 0, 238);
     --main: rgb(29, 27, 32);
     --main-5: rgba(29, 27, 32, 0.05);
     --main-10: rgba(29, 27, 32, 0.1);
